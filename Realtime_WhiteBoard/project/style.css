@@ -1,0 +1,24 @@
+/* body tag  */
+body {
+    margin: 0px;
+}
+
+/* every elemnt in html */
+* {
+    box-sizing: border-box;
+}
+
+.tool-img {
+    height: 4rem;
+}
+
+.toolbar-options {
+    display: flex;
+
+}
+
+.toolbar {
+    display        : flex;
+    justify-content: center;
+    gap            : 2rem;
+}

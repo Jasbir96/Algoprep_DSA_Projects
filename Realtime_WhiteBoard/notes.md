@@ -1,3 +1,4 @@
+# Day-1
 ## Agenda
 * Project Demo
 * Template -> How to write about your project in your resume
@@ -34,13 +35,30 @@
 ![](resume.png)
 
 ### facts
-* Enviornment -> [features]  browser 
-* Logic -> Javascript [Engine]
+* Enviornment -> [features]  browser  -> document
+* Logic -> Javascript [Engine] 
 
 
 ### References 
 Canvas : https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage
 
+
+
+# Day-2 
+
+## Agenda
+* canvas API
+* pencil -> color change
+* eraser
+* download 
+* sticky
+  * minimize , remove
+  * movemement
+* redo , undo
+
+## Facts
+* Browser : document -> to represent our webpage
+* Draw webpage -> browser  
 
 
 

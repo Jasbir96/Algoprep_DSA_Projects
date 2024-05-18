@@ -20,12 +20,13 @@ for (let i = 0; i < toolsArr.length; i++) {
         else if (toolName == "eraser") {
             currentTool = "eraser";
             tool.strokeStyle = "white";
-            tool.lineWidth=5;
+            tool.lineWidth = 5;
         } else if (toolName == "download") {
             console.log("download clicked");
         }
         else if (toolName == "sticky") {
-            console.log("sticky clicked");
+            currentTool = "sticky";
+            createSticky();
 
         } else if (toolName == "upload") {
             console.log("upload clicked");
@@ -79,4 +80,74 @@ function getYDelta() {
 
 
 
+/*******  create Sticky****/
+
+// 1. static version  -> 
+// 2. how it will be added to your ui
+// 3. how it will be  functionality 
+function createSticky() {
+    let stickyDiv = document.createElement("div");
+    let navDiv = document.createElement("div");
+    let closeDiv = document.createElement("div");
+    let minimizeDiv = document.createElement("div");
+    let textArea = document.createElement("textarea");
+    // class styling
+    stickyDiv.setAttribute("class", "sticky");
+    navDiv.setAttribute("class", "nav");
+    textArea.setAttribute("class", "text-area");
+
+    closeDiv.innerText = "X";
+    minimizeDiv.innerText = "min";
+    // html structure
+    stickyDiv.appendChild(navDiv);
+    stickyDiv.appendChild(textArea);
+    navDiv.appendChild(minimizeDiv);
+    navDiv.appendChild(closeDiv);
+    // page me add kr do 
+    document.body.appendChild(stickyDiv);
+
+    /**********functionality******/
+    let isMinimized = false;
+    closeDiv.addEventListener("click", function () {
+        stickyDiv.remove();
+    })
+    minimizeDiv.addEventListener("click", function () {
+        textArea.style.display = isMinimized == true ? "block" : "none";
+        isMinimized = !isMinimized
+    })
+
+    let isStickyDown = false;
+    // navbar -> mouse down , mouse mousemove, mouse up 
+
+    navDiv.addEventListener("mousedown", function (e) {
+        // initial point
+        initialX = e.clientX
+        initialY = e.clientY
+        console.log("mousedown", initialX, initialY);
+        isStickyDown = true;
+    })
+    navDiv.addEventListener("mousemove", function (e) {
+        if (isStickyDown == true) {
+            // final point 
+            let finalX = e.clientX;
+            let finalY = e.clientY;
+            console.log("mousemove",finalX, finalY);
+            //  distance
+            let dx = finalX - initialX;
+            let dy = finalY - initialY;
+            //  move sticky
+            //original top left
+            let { top, left } = stickyDiv.getBoundingClientRect()
+            // stickyPad.style.top=10+"px";
+            stickyDiv.style.top = top + dy + "px";
+            stickyDiv.style.left = left + dx + "px";
+            initialX = finalX;
+            initialY = finalY;
+        }
+    })
+    navDiv.addEventListener("mouseup", function () {
+        isStickyDown = false;
+    })
+
+}
 

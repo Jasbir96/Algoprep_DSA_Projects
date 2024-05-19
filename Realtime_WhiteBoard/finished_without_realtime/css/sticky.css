@@ -1,0 +1,84 @@
+/* sticky css*/
+.close {
+  z-index: 50;
+  right: 11px;
+  display: block;
+  box-sizing: border-box;
+  width: 17px;
+  height: 17px;
+  border-radius: 50px;
+  background-color: #ff4757;
+  position: absolute;
+  top: 9px;
+}
+.writing-pad {
+  position: absolute;
+  max-height: 200px;
+  max-width: 246px;
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.4);
+}
+.minimize {
+  z-index: 50;
+  right: 36px;
+  display: block;
+  box-sizing: border-box;
+  width: 17px;
+  height: 17px;
+  border-radius: 50px;
+  background-color: #2ed573;
+  position: absolute;
+  top: 9px;
+}
+.sticky-pad {
+  z-index: 40;
+  /* min-height: 30px; */
+  min-width: 246px;
+  max-height: 200px;
+  max-width: 246px;
+  padding-top: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 0 15px 0 15px;
+  box-shadow: 9px 8px 18px 3px rgba(0, 0, 0, 0.4);
+  
+}
+.sticky-pad .nav {
+  z-index: 41;
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+ 
+  border-radius: 0px 15px 0px 0px;
+}
+ .nav:hover {
+  cursor: move;
+}
+
+.sticky-pad textarea,.sticky-pad img {
+  min-height: 200px;
+  width: 100%;
+
+  background: transparent;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 0px 15px 15px 0px;
+  border: none;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-align: center;
+  color: grey;
+}
+.sticky-pad textarea:focus,
+.sticky-pad textarea:active {
+  outline: none;
+}
+.minimize:hover{
+cursor: pointer;
+}
+.close:hover{
+cursor: pointer;
+}

@@ -12,7 +12,7 @@
   * How to explain 
   * Questions -> Interviews 
 
-**Projects**[3 classes -> 2 projects]
+**Projects**[4 classes -> 2 projects]
 * `Real time Whiteboard`
   * Dev orientend
   * Realworld concepts
@@ -57,11 +57,43 @@
 * sticky
   * minimize , remove
   * movemement
-* redo , undo
+
 
 ## Facts
 * Browser : document -> to represent our webpage
 * Draw webpage -> browser  
+
+# Day-3 
+## agenda
+* upload download
+* redo , undo
+* realtime upload 
+
+
+
+## undo :
+**Possibilities**
+* canvas function -> ??->no
+* you have implement your own logic
+* while drawing -> store the point
+* when you click on undo 
+  * clearRect() -> clear
+  * undo -> 
+    * last point remove storage 
+    * redraw
+* 
+
+
+
+
+
+
+## Browser
+document
+event listner
+canvas
+URL 
+
 
 
 

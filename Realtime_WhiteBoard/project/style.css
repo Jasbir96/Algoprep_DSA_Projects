@@ -24,13 +24,13 @@ body {
 }
 
 .sticky {
-    height     : 10rem;
-    width      : 6rem;
-    
+    height: 10rem;
+    width : 6rem;
+
     /*  */
     position: absolute;
-    left:40vw;
-    top:40vh;
+    left    : 40vw;
+    top     : 40vh;
 }
 
 .nav {
@@ -44,6 +44,16 @@ body {
 }
 
 .text-area {
+    height: 80%;
+    width : 100%;
+}
+
+
+.input-tag {
+    display: none;
+}
+
+.upload-img {
     height: 80%;
     width : 100%;
 }

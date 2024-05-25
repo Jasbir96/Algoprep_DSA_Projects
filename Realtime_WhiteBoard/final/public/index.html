@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/sticky.css">
+    <link rel="stylesheet" href="./css/image.css">
+    <link rel="stylesheet" href="./css/hamburger.css">
+    <link rel="stylesheet" href="./css/queries.css">
+    <link rel="shortcut icon" href="./NewIcons/pep.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- canvas Tag -->
+    <div class="combined">
+        <div class="toolBar">
+            <div class=" hamburger is-active" id="hamburger-1">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <div class="tool-panel add-animation">
+                <div class="tool active">
+                    <img src="NewIcons/Black_Pencil.svg" class="tool-img " id="pencil-img" alt=""
+                        onclick="handleLocaltoolChange('pencil')">
+                    <div class="tool-options pencil">
+                        <div class="pencil-size">
+                            <input type="range" id="pen-size" min="5" max="30" value="5"
+                                onchange="sizeChange(this.value)">
+                        </div>
+                        <div class="pencil-color">
+                            <div class="colors red" onclick="handleColorChange('red')"></div>
+                            <div class="colors green" onclick="handleColorChange('#55efc4')"></div>
+                            <div class="colors blue" onclick="handleColorChange('blue')"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tool eraser">
+                    <img src="NewIcons/Eraser.svg" alt="" class="tool-img" id="eraser-img"
+                        onclick="handleLocaltoolChange('eraser')">
+                    <div class="tool-options eraser">
+                        <div class="eraser-size">
+                            <input type="range" id="eraser-size" min="5" max=30 onchange="sizeChange(this.value)">
+                        </div>
+                    </div>
+                </div>
+                <div class="tool">
+                    <img src="NewIcons/StickyNote.svg" alt="" onclick="handleLocaltoolChange('sticky')" class="tool-img">
+                </div>
+                <div class="tool">
+                    <input type="file" name="" id="" class="input-img" accept="image/*">
+                    <img src="NewIcons/Photo.svg" alt="" class="upload-img tool-img"
+                        onclick="handleToolChange('upload')">
+                </div>
+                <div class="tool">
+                    <img src="./NewIcons/Download.svg" alt="" class="tool-img download-tool">
+                </div>
+                <div class="tool">
+                    <img src="./NewIcons/Undo.svg" alt="" class="tool-img undo">
+                </div>
+                <div class="tool">
+                    <img src="./NewIcons/Redo.svg" alt="" class="tool-img redo">
+                </div>
+            </div>
+        </div>
+        <!-- notes dom create -->
+        <canvas class="board">
+        </canvas>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" crossorigin></script>
+    <script src="./js/utilities/common.js"></script>
+    <script src="./js/tool.js"></script>
+    <script src="./js/sticky.js"></script>
+    <script src="./js/image.js"></script>
+    <script src="./js/draw.js"></script>
+    <script src="./js/reciever.js"></script>
+</body>
+
+</html>

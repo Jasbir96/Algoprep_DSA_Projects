@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div class="menu">
+        <div class="formatting">
+            <div class="subgroup">
+                <div class="font-familyContainer">
+                    <select id="font-family">
+                        <option value="Arial">Arial</option>
+                        <option value="Cambria">Cambria</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="monospace">Monospace</option>
+                        <option value="sans-serif">Sans-Serif</option>
+                        <option value="fantasy">Fantasy</option>
+                    </select>
+                </div>
+                <div class="style-options">
+                    <input id="bold" type="button" value="B">
+                    <input id="underline" type="button" value="U">
+                    <input id="italic" type="button" value="I">
+                </div>
+            </div>
+            <div class="subgroup">
+                <div class="font-size-container">
+                    <select id="font-size">
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="14">14</option>
+                        <option value="16">16</option>
+                    </select>
+                </div>
+                <div class="color-container">
+                    <input id="bg-color" type="color" value="#FFFFFF">
+                    <input id="text-color" type="color" value="#000000">
+                </div>
+            </div>
+        </div>
+        <div class="alignment">
+            <input id="left" type="button" halign="left" value="L">
+            <input id="center" type="button" halign="center" value="C">
+            <input id="right" type="button" halign="right" value="R">
+        </div>
+    </div>
+<!-- <div class="menu-options">Menu Options</div> -->
+    <div class="formula-bar">
+        <input type="text" id="address" disabled class="address">
+        <div class="formula-break">:</div>
+        <input type="text" id="formula" class="formula">
+    </div>
+
+    <div class="cells-content">Cells</div>
+
+    <div class="sheets">
+        <div class="add-sheet">
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="sheets-list">
+            <div class="sheet active-sheet" sheetid="0">Sheet 1</div>
+        </div>
+    </div>
+    <script src="./init.js" defer></script>
+    <script src="./formula.js" defer></script>
+    <script src="./sheets.js" defer></script>
+    <script src="./formulaUtils.js" defer></script>
+</body>
+
+</html>

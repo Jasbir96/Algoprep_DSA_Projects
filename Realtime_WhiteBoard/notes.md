@@ -22,7 +22,7 @@
   * DSA heavy project -> formula
 
 **Pointers for adding Project in your Resume** 
-* Crisp Explaination
+* Crisp Explaination in pointer
 * Github code 
 * Deployed version
 

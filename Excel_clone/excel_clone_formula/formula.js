@@ -10,6 +10,13 @@ for (let i = 0; i < AllGridCells.length; i++) {
         if (cellObject.value == content) {
             return;
         }
+        
+        // if you have a formula 
+        if (cellObject.formula) {
+            removeFormula(address, cellObject.formula);
+            cellObject.formula = "";
+            formulaInput.value = "";
+        }
         cellObject.value = content;
         setUI(content, rid, cid);
     })
@@ -80,9 +87,26 @@ function setFormula(address, formula) {
     }
 }
 
+function removeFormula(address, formula) {
+    // ( A1 + A2 ) -> ( 10 + 20 )
+    let formulaEntities = formula.split(" ");
+    // [(,A1,+,A2,)]
+    for (let i = 0; i < formulaEntities.length; i++) {
+        let ascii = formulaEntities[i].charCodeAt(0);
+        if (ascii >= 65 && ascii <= 90) {
+            // address -> rid cId
+            let parentrcObj = getRidCidFromAddress(formulaEntities[i]);
+            // db -> value
+            let children = db[parentrcObj.rid][parentrcObj.cid].children;
+            let idx = children.indexOf(address);
+            children.splice(idx, 1);
+         
+        }
+    }
+}
 
 function setUI(value, rid, cid) {
-    
+
     let tobeChangedCell = document.querySelector(`.grid .cell[rId='${rid}'][cId='${cid}']`);
     tobeChangedCell.textContent = value;
     db[rid][cid].value = value;

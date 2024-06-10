@@ -69,6 +69,7 @@ function initDB() {
                 bold: false,
                 value: "",
                 formula: "",
+                children:[]
             }
             rowArr.push(cellObject)
         }
